@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const db = require('./db');
 const patientsRoute = require('./routes/patients');
 
-dotenv.config();
+//dotenv.config();
 const app = express();
 app.use(express.json());
 
