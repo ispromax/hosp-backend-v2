@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db');
 
+// GET /api/register just for testing from browser
+router.get('/register', (req, res) => {
+  res.send('API is up! Use POST to submit data.');
+});
+
+// POST /api/register - actual form submission
 router.post('/register', async (req, res) => {
   const { first_name, last_name, age, gender, phone, email } = req.body;
 
