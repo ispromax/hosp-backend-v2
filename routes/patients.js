@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
 
   try {
     const result = await pool.query(
-      `INSERT INTO patients (first_name, last_name, age, gender, phone, email) 
+      `INSERT INTO patients_v2 (first_name, last_name, age, gender, phone, email) 
        VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
       [first_name, last_name, age, gender, phone, email]
     );
@@ -25,7 +25,7 @@ router.post('/register', async (req, res) => {
     res.status(201).json(result.rows[0]);
   } catch (err) {
     console.error('❌ DB INSERT ERROR:', err); // THIS will tell you the real reason
-    res.status(500).send('Something went wrong!');
+    res.status(500).send('Something went wrong lst line!');
   }
 });
 
