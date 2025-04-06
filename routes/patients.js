@@ -25,9 +25,8 @@ router.post('/register', async (req, res) => {
     res.status(201).json(result.rows[0]);
   } catch (err) {
     console.error('❌ DB INSERT ERROR:', err); // THIS will tell you the real reason
-    res.status(500).send('Something went wrong lst line!');
+    res.status(500).send('Something went wrong!');
   }
 });
-
 
 module.exports = router;
